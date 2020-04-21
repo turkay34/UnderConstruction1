@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../img/sea.jpg");
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover  ;
+}
+.container{
+    display: grid;
+    grid-template-areas:
+        "A A A"
+        "B C D"
+        ". C ."
+        "E E E";
+    grid-template-rows: 100px 200px 200px 150px;
+    grid-template-columns: auto;
+    grid-gap: 5px 5px;
+    text-align: center;
+}
+.toplayer{
+    grid-area: A;
+    align-self: center;
+    justify-self: end;
+}
+.toplayer button{
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: white;
+    opacity: 0.6;
+}
+.midfirst{
+    grid-area: B;
+}
+.midsecond{
+    grid-area: C;
+    align-self: center;
+}
+.midsecond p{
+    color: white;
+    font-family: Ebrima;
+    font-size: 50px;
+}
+.midsecond p[title$=timer]{
+    font-size: 13px;
+}
+.midsecond p[title$=big]{
+    font-size: 90px;
+    font-variant: all-petite-caps;
+}
+.midsecond p[title$=small]{
+    font-variant: all-petite-caps;
+}
+.midsecond input{
+    color: white;
+    font-family: Arial;
+    font-size: 10px;
+    font-variant: all-petite-caps;
+    background-color: transparent;
+    height: 25px;
+    width: 100px;
+    border-radius: 30px;
+    border: 1px solid white;
+}
+hr{
+    margin: auto;
+    width: 300px;
+    opacity: 25%;
+}
+.midthird{
+    grid-area: D;
+}
+.bottomlayer{
+    grid-area: E;
+    justify-self: end;
+    align-self: end;
+}
+.bottomlayer button{
+    background-color: deepskyblue;
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    border: 1px solid deepskyblue;
+}
+.bottomlayer input[title$=menu]{
+    font-size: 8px;
+    color: white;
+    background-color: #52514d;
+    height: 16px;
+    width: 20px;
+    border: none;
+}
+@media only screen and (min-width: 768px){
+    .container{
+        grid-template-rows: 100px repeat(3,250px);
+        grid-template-columns: auto;
+    }
+}

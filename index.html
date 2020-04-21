@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soon</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/5e5ab521c7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div class="toplayer">
+        <button><i class="fab fa-whmcs"></i></button>
+    </div>
+    <div class="midfirst">
+
+    </div>
+    <div class="midsecond">
+        <p title="big">custom</p>
+        <p title="small">coming soon</p> <br>
+        <hr>
+        <br>
+        <p id="demo" title="timer"></p> <br>
+        <hr>
+        <br>
+        <input class="button" type="submit" value="back homepage">
+    </div>
+    <div class="midthird">
+
+    </div>
+    <div class="bottomlayer">
+        <button><i class="far fa-comment-dots" style="font-size: 12px"></i></button>
+        <br> <br>
+        <input title="menu" type="button" value="^">
+    </div>
+
+    <script>
+        var hedeftarih = new Date("March 10, 2021 09:00:00").getTime();
+
+        var x = setInterval(function ()
+        {
+            var simdi = new Date().getTime();
+
+            var kalan = hedeftarih - simdi;
+
+            var gun = Math.floor(kalan / (1000 * 60 * 60 * 24));
+            var saat = Math.floor((kalan % (1000 * 60 * 60 *24)) / (1000 * 60 * 60));
+            var dakika = Math.floor((kalan % (1000 * 60 * 60)) / (1000 * 60));
+            var saniye = Math.floor(kalan % (1000 * 60) / 1000);
+
+            document.getElementById("demo").innerHTML = gun + " days " + saat + " hours " + dakika + " minutes " + saniye + " seconds";
+
+            if (kalan < 0)
+            {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "SON";
+            }
+        }, 1000);
+    </script>
+</div>
+</body>
+</html>
